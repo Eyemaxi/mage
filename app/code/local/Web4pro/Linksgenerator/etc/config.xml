@@ -1,0 +1,115 @@
+<?xml version="1.0" ?>
+
+<config>
+    <modules>
+        <Web4pro_Linksgenerator>
+            <version>1.0.0</version>
+        </Web4pro_Linksgenerator>
+    </modules>
+
+    <frontend>
+        <layout>
+            <updates>
+                <linksgenerator>
+                    <file>linksgenerator.xml</file>
+                </linksgenerator>
+            </updates>
+        </layout>
+
+        <routers>
+            <linksgenerator>
+                <use>standard</use>
+                <args>
+                    <module>Web4pro_Linksgenerator</module>
+                    <frontName>linksgenerator</frontName>
+                </args>
+            </linksgenerator>
+        </routers>
+    </frontend>
+
+    <global>
+        <models>
+            <linksgenerator>
+                <class>Web4pro_Linksgenerator_Model</class>
+                <resourceModel>linksgenerator_resource</resourceModel>
+            </linksgenerator>
+
+            <linksgenerator_resource>
+                <class>Web4pro_Linksgenerator_Model_Resource</class>
+                <entities>
+                    <link>
+                        <table>web4pro_linksgenerator</table>
+                    </link>
+                    <bind>
+                        <table>web4pro_link_page</table>
+                    </bind>
+                </entities>
+            </linksgenerator_resource>
+        </models>
+
+        <blocks>
+            <linksgenerator>
+                <class>Web4pro_Linksgenerator_Block</class>
+            </linksgenerator>
+        </blocks>
+
+        <resources>
+            <linksgenerator_setup>
+                <setup>
+                    <module>Web4pro_Linksgenerator</module>
+                </setup>
+            </linksgenerator_setup>
+        </resources>
+
+        <helpers>
+            <linksgenerator>
+                <class>Web4pro_Linksgenerator_Helper</class>
+            </linksgenerator>
+        </helpers>
+
+
+    </global>
+
+    <admin>
+        <routers>
+            <!--<linksgenerator_admin>
+                <use>admin</use>
+                <args>
+                    <module>Web4pro_Linksgenerator</module>
+                    <frontName>linksgenerator_admin</frontName>
+                </args>
+
+            </linksgenerator_admin>-->
+            <adminhtml>
+                <args>
+                    <modules>
+                        <linksgenerator after="Mage_Adminhtml">Web4pro_Linksgenerator_Adminhtml</linksgenerator>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+
+    </admin>
+
+    <adminhtml>
+        <menu>
+            <linksgenerator module="linksgenerator">
+                <title>Linksgenerator</title>
+                <sort_order>9999</sort_order>
+                <action>adminhtml/linksgenerator</action>
+            </linksgenerator>
+        </menu>
+
+        <layout>
+            <updates>
+                <linksgenerator>
+                    <file>linksgenerator.xml</file>
+                </linksgenerator>
+            </updates>
+        </layout>
+    </adminhtml>
+    <default>
+
+    </default>
+
+</config>

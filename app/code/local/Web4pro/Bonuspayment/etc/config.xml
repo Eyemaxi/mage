@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <modules>
+        <Web4pro_Bonuspayment>
+            <version>1.0.0</version>
+        </Web4pro_Bonuspayment>
+    </modules>
+
+    <global>
+        <models>
+            <bonuspayment>
+                <class>Web4pro_Bonuspayment_Model</class>
+            </bonuspayment>
+        </models>
+        <blocks>
+            <bonuspayment>
+                <class>Web4pro_Bonuspayment_Block</class>
+            </bonuspayment>
+        </blocks>
+        <helpers>
+            <bonuspayment>
+                <class>Web4pro_Bonuspayment_Helper</class>
+            </bonuspayment>
+        </helpers>
+
+        <resources>
+            <bonuspayment_setup>
+                <setup>
+                    <module>Web4pro_Bonuspayment</module>
+                </setup>
+            </bonuspayment_setup>
+        </resources>
+    </global>
+
+    <frontend>
+        <routers>
+            <bonuspayment>
+                <use>standard</use>
+                <args>
+                    <module>Web4pro_Bonuspayment</module>
+                    <frontName>bonuspayment</frontName>
+                </args>
+            </bonuspayment>
+        </routers>
+        <events>
+            <customer_register_success>
+                <observers>
+                    <persistent>
+                        <class>bonuspayment/observer</class>
+                        <method>createBonusAccount</method>
+                    </persistent>
+                </observers>
+            </customer_register_success>
+        </events>
+    </frontend>
+
+    <!-- Default configuration -->
+    <default>
+        <payment>
+            <bonuspayment>
+                <active>1</active>
+                <model>bonuspayment/method_bonus</model>
+                <title>Bonus Payment</title>
+                <sallowspecific>0</sallowspecific>
+                <payment_action>authorize_capture</payment_action>
+                <bonus_account>1000</bonus_account>
+            </bonuspayment>
+        </payment>
+    </default>
+</config>

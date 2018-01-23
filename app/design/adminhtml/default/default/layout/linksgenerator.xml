@@ -1,0 +1,8 @@
+<?xml version="1.0"?>
+<layout version="1.0.0">
+    <adminhtml_linksgenerator_index>
+        <reference name="content">
+            <block type="linksgenerator/adminhtml_linksgenerator" name="linksgenerator"/>
+        </reference>
+    </adminhtml_linksgenerator_index>
+</layout>

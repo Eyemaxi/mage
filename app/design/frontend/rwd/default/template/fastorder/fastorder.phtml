@@ -1,0 +1,61 @@
+<?php
+/** @var  Web4pro_Fastorder_Block_Cart_Fastorder $this */
+    $isFastorder = $this->getIsFastorder();
+
+    $urlAction = $this->getFastOrderUrl();
+    $_SESSION['fastorder_form_url'] = $this->getRequest()->getModuleName() . '/' . $this->getRequest()->getControllerName() . '/' . $this->getRequest()->getActionName();
+    //echo $baseSubtotal . '<br>';
+?>
+
+<?php if($isFastorder): ?>
+
+    <div class="fastorder shipping">
+    <h2>Fast order form</h2>
+        <div class="fastorder-form">
+            <?php
+                if(isset($_SESSION['fastorder_errors'])):
+                    foreach ($_SESSION['fastorder_errors'] as $error):
+                        ?>
+                <p style="color: #880000;"><?php echo $error; ?></p>
+            <?php
+                    endforeach;
+                endif;
+            ?>
+            <form action="<?php echo $urlAction; ?>" method="post" id="fastorder-form">
+                <div class="fastorder-data-form">
+                    <label class="required" for="fastorder_full_name"><em>*</em>Full name</label>
+                    <div class="field-wrapper">
+                        <input class="input-text required-entry" id="fastorder_full_name" name="fastorder_full_name" value="" type="text" required>
+                    </div>
+                    <label for="fastorder_email">E-mail</label>
+                    <div class="field-wrapper">
+                        <input class="input-text validate-email" id="fastorder_email" name="fastorder_email" value="" type="text">
+                    </div>
+                    <label for="fastorder_phone_number">Phone number</label>
+                    <div class="field-wrapper">
+                        <input class="input-text validate-phoneLax" id="fastorder_phone_number" name="fastorder_phone_number" value="" type="text">
+                    </div>
+                </div>
+                <div>
+                    <button type="button" class="button" name="fastorder_checkout" title="Place order" onclick="fastorderForm.submit()"><span><span>Place order</span></span></button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        var fastorderForm = new VarienForm('fastorder-form');
+    </script>
+
+    <style type="text/css">
+        .fastorder-data-form{
+            margin-top: 2%;
+        }
+
+        .fastorder-data-form input{
+            margin-bottom: 2%;
+        }
+    </style>
+
+<?php endif; ?>

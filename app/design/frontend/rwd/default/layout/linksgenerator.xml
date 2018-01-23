@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+
+<cms_page_view>
+    <reference name="content">
+        <block type="linksgenerator/links" name="linksgenerator_content_links" template="linksgenerator/content_links.phtml"/>
+    </reference>
+    <reference name="linksgenerator_content_links">
+        <block type="linksgenerator/links_test_hello" name="linksgenerator_content_links_hello" template="linksgenerator/content_links_hello.phtml" />
+    </reference>
+
+</cms_page_view>
+
+
+
+</layout>

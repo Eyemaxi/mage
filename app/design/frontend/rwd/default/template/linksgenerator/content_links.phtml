@@ -1,0 +1,11 @@
+<?php
+/** @var  Web4pro_Linksgenerator_Block_Links $this */
+/** @var Web4pro_Linksgenerator_Model_Resource_Link_Collection $collection */
+    $collection = $this->getCollectionLinks();
+    /** @var Web4pro_Linksgenerator_Model_Link $link */
+foreach ($collection as $link) {
+        echo '<p><a id="'. $link->getId() .'" href="#" style="color: red; font-size: 20px;">' . $link->getLinkText() . '</a></p>';
+    }
+
+    echo $this->getChildHtml('linksgenerator_content_links_hello');
+?>

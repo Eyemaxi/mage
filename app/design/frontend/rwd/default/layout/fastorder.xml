@@ -1,0 +1,8 @@
+<?xml version="1.0" ?>
+<layout>
+    <checkout_cart_index translate="label">
+        <reference name="checkout.cart.extra">
+            <block type="fastorder/cart_fastorder" name="fastorder.cart.fastorder" as="fastorder" template="fastorder/fastorder.phtml" />
+        </reference>
+    </checkout_cart_index>
+</layout>

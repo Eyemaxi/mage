@@ -1,0 +1,63 @@
+<?xml version="1.0" ?>
+
+<config>
+    <modules>
+        <Web4pro_Fastorder>
+            <version>1.0.0</version>
+        </Web4pro_Fastorder>
+    </modules>
+
+    <frontend>
+        <layout>
+            <updates>
+                <fastorder>
+                    <file>fastorder.xml</file>
+                </fastorder>
+            </updates>
+        </layout>
+
+        <routers>
+            <fastorder>
+                <use>standard</use>
+                <args>
+                    <module>Web4pro_Fastorder</module>
+                    <frontName>fastorder</frontName>
+                </args>
+            </fastorder>
+        </routers>
+    </frontend>
+
+    <global>
+        <models>
+            <fastorder>
+                <class>Web4pro_Fastorder_Model</class>
+            </fastorder>
+        </models>
+
+        <blocks>
+            <fastorder>
+                <class>Web4pro_Fastorder_Block</class>
+            </fastorder>
+        </blocks>
+
+
+        <helpers>
+            <fastorder>
+                <class>Web4pro_Fastorder_Helper</class>
+            </fastorder>
+        </helpers>
+
+    </global>
+
+    <adminhtml>
+
+        <layout>
+            <updates>
+                <fastorder>
+                    <file>fastorder.xml</file>
+                </fastorder>
+            </updates>
+        </layout>
+    </adminhtml>
+
+</config>

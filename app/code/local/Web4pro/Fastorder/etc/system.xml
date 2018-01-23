@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+    <sections>
+        <sales>
+            <groups>
+                <fastorder translate="label">
+                    <label>Web4pro Fastorder</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <minimum_subtotal>
+                            <label>Minimum subtotal</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>70</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </minimum_subtotal>
+                    </fields>
+                </fastorder>
+            </groups>
+        </sales>
+    </sections>
+</config>

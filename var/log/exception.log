@@ -1,0 +1,20 @@
+2018-01-16T16:43:46+00:00 ERR (3): 
+exception 'Mage_Core_Model_Session_Exception' in /var/www/test.com/public_html/app/code/core/Mage/Core/Model/Session/Abstract/Varien.php:421
+Stack trace:
+#0 /var/www/test.com/public_html/app/code/core/Mage/Core/Model/Session/Abstract/Varien.php(236): Mage_Core_Model_Session_Abstract_Varien->validate()
+#1 /var/www/test.com/public_html/app/code/core/Mage/Core/Model/Session/Abstract.php(84): Mage_Core_Model_Session_Abstract_Varien->init('tag', NULL)
+#2 /var/www/test.com/public_html/app/code/core/Mage/Tag/Model/Session.php(38): Mage_Core_Model_Session_Abstract->init('tag')
+#3 /var/www/test.com/public_html/app/code/core/Mage/Core/Model/Config.php(1357): Mage_Tag_Model_Session->__construct(Array)
+#4 /var/www/test.com/public_html/app/Mage.php(463): Mage_Core_Model_Config->getModelInstance('tag/session', Array)
+#5 /var/www/test.com/public_html/app/Mage.php(477): Mage::getModel('tag/session', Array)
+#6 /var/www/test.com/public_html/app/code/core/Mage/Core/Controller/Varien/Action.php(641): Mage::getSingleton('tag/session')
+#7 /var/www/test.com/public_html/app/code/core/Mage/Core/Controller/Varien/Action.php(665): Mage_Core_Controller_Varien_Action->_initLayoutMessages(Array)
+#8 /var/www/test.com/public_html/app/code/core/Mage/Catalog/Helper/Product/View.php(146): Mage_Core_Controller_Varien_Action->initLayoutMessages(Array)
+#9 /var/www/test.com/public_html/app/code/core/Mage/Catalog/controllers/ProductController.php(132): Mage_Catalog_Helper_Product_View->prepareAndRender(3, Object(Mage_Catalog_ProductController), Object(Varien_Object))
+#10 /var/www/test.com/public_html/app/code/core/Mage/Core/Controller/Varien/Action.php(418): Mage_Catalog_ProductController->viewAction()
+#11 /var/www/test.com/public_html/app/code/core/Mage/Core/Controller/Varien/Router/Standard.php(254): Mage_Core_Controller_Varien_Action->dispatch('view')
+#12 /var/www/test.com/public_html/app/code/core/Mage/Core/Controller/Varien/Front.php(172): Mage_Core_Controller_Varien_Router_Standard->match(Object(Mage_Core_Controller_Request_Http))
+#13 /var/www/test.com/public_html/app/code/core/Mage/Core/Model/App.php(365): Mage_Core_Controller_Varien_Front->dispatch()
+#14 /var/www/test.com/public_html/app/Mage.php(684): Mage_Core_Model_App->run(Array)
+#15 /var/www/test.com/public_html/index.php(83): Mage::run('', 'store')
+#16 {main}

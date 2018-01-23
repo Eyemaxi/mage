@@ -1,0 +1,10 @@
+<?xml version="1.0" ?>
+
+<config>
+    <modules>
+        <Web4pro_Linksgenerator>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Web4pro_Linksgenerator>
+    </modules>
+</config>
